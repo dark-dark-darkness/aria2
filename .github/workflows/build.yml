@@ -95,8 +95,10 @@ jobs:
       if: runner.os == 'Linux' && matrix.target-os == 'windows'
       run: |
         HOST=i686-w64-mingw32
+        ARIA2_STATIC=no
 
         echo 'HOST='"$HOST" >> $GITHUB_ENV
+        echo 'ARIA2_STATIC='"$ARIA2_STATIC" >> $GITHUB_ENV
     - name: Configure autotools (Linux, gnutls)
       if: runner.os == 'Linux' && matrix.crypto == 'gnutls'
       run: |
